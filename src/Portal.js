@@ -12,7 +12,7 @@ export const Portal = ({children, title}) => {
             newWindow.current.document.head.appendChild(x.cloneNode(true))
         })
         return () => newWindow.current && newWindow.current.close()
-    })
+    }, [div]) //  обязательно див в зависимости
 
     return createPortal(children, div)
 }
